@@ -50,7 +50,7 @@ export default function DoctorDashboard() {
   setTotalConsults(consults);
   setTotalEarnings(earnings);
   setEarningsByHospital(hospitalMap);
-}, [currentDoctorEmail]);
+}, [currentDoctorEmail,hospEarnings]);
 
   useEffect(() => {
     if (newHospital && doctorData) {
