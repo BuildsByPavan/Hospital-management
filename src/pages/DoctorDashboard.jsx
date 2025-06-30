@@ -66,10 +66,10 @@ export default function DoctorDashboard() {
       byHospital[hosp.hospitalName] = hospEarn;
     }
 
-  setTotalConsults(consults);
-  setTotalEarnings(earnings);
-  setEarningsByHospital(hospitalMap);
-}, [currentDoctorEmail]);
+    setTotalConsults(consults);
+    setTotalEarnings(earnings);
+    setEarningsByHospital(byHospital);
+  }, [doctorData, bookings, currentDoctorEmail]);
 
   // 3️⃣ When hospital dropdown changes, update department list
   useEffect(() => {
@@ -279,7 +279,7 @@ export default function DoctorDashboard() {
         <p><strong>Total Earnings (60%):</strong> ₹{totalEarnings.toFixed(2)}</p>
       </div>
 
-      <h3>Earnings by Hospital</h3>
+      <h3>Earnings by Doctor</h3>
       <ul>
         {Object.entries(earningsByHospital).map(([hosp, amt]) => (
           <li key={hosp}>{hosp}: ₹{amt.toFixed(2)}</li>
