@@ -66,10 +66,10 @@ export default function DoctorDashboard() {
       byHospital[hosp.hospitalName] = hospEarn;
     }
 
-    setTotalConsults(consults);
-    setTotalEarnings(earnings);
-    setEarningsByHospital(byHospital);
-  }, [doctorData, bookings, currentDoctorEmail]);
+  setTotalConsults(consults);
+  setTotalEarnings(earnings);
+  setEarningsByHospital(hospitalMap);
+}, [currentDoctorEmail]);
 
   // 3️⃣ When hospital dropdown changes, update department list
   useEffect(() => {
